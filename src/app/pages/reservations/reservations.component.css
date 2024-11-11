@@ -1,0 +1,27 @@
+.main {
+  margin: 4rem 0 1rem 14rem;
+  padding: 1rem ;
+  --numDays: 5;
+  --numHours: 10;
+  --timeHeight: 60px;
+  --calBgColor: #fff1f8;
+  --eventBorderColor: #f2d3d8;
+  --eventColor1: #ffd6d1;
+  --eventColor2: #fafaa3;
+  --eventColor3: #e2f8ff;
+  --eventColor4: #d1ffe6;
+
+  .container {
+    padding: 1rem 2rem;
+  }
+}
+
+.header {
+  height: 1.5rem;
+  padding: 0 1rem;
+  color: black;
+  font-weight: 700;
+  font-size: 1.2rem;
+
+  margin-bottom: 1rem;
+}

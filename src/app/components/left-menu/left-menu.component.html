@@ -1,0 +1,19 @@
+<section class="main">
+  <div class="top">
+    <button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <i class="fa-solid fa-house"></i> Accueil
+    </button>
+    <button routerLink="/reservations" routerLinkActive="active">
+      <i class="fa-solid fa-calendar"></i> Réservations
+    </button>
+    <button routerLink="/management" routerLinkActive="active">
+      <i class="fa-solid fa-car-side"></i> Gérer le parc
+    </button>
+  </div>
+
+  <div class="bottom">
+    <mat-divider></mat-divider>
+    <h4>Agence Nanterre</h4>
+    <span>12 Bd de Pesaro<br/>92000 Nanterre</span>
+  </div>
+</section>

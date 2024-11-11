@@ -1,0 +1,26 @@
+<mat-dialog-content class="mat-typography content">
+
+  <div class="header">
+    <i class="fa-solid fa-hourglass-start"></i>
+    <p class="alert">Confirmer la prise en charge ?</p>
+    <span></span>
+  </div>
+
+  <div class="details">
+    <span class="name">Nour-Eddine BELLAOUD</span>
+    <span class="car">Renault Kangoo (DF-212-QG)</span>
+    <span class="begin__time">Heure de prise en charge : {{ data }}</span>
+    <span class="return__time">Heure de retour prévue : 16:00</span>
+  </div>
+
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close class="no__button">Non</button>
+    <button mat-flat-button [mat-dialog-close]="true" class="yes__button" cdkFocusInitial>Oui</button>
+  </mat-dialog-actions>
+
+</mat-dialog-content>
+
+<!--<h2 mat-dialog-title>Confirmer la prise en charge ?</h2>-->
+
+
+

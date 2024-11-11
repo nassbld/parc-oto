@@ -1,0 +1,82 @@
+.card {
+  height: 5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: #F7F2EA;
+  border-radius: 0.6rem;
+  border: 1px solid rgb(156, 151, 151);
+  position: relative;
+  transition: all .3s ease;
+  padding: 0 0.75rem;
+}
+
+.card__icons {
+  opacity: 0;
+  margin-left: auto;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.card__time {
+  left: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: lighter;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px 8px;
+  color: whitesmoke;
+  background-color: rgb(77, 67, 67);
+}
+
+.name {
+  max-width: 25%;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.car {
+  display: flex;
+  flex-direction: column;
+
+  .vehicle__brand {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .vehicle__model {
+    font-size: 0.75rem;
+    color: #555555;
+  }
+
+  .vehicle__licence-plate {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #C8102E;
+  }
+}
+
+.svg-icon {
+  background-color: rgb(77, 67, 67);
+  fill: #ece6e6;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  padding: 2px;
+  transition: all .5s ease-in-out;
+}
+
+.card:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+  animation: video 5s ease;
+}
+
+.card:hover .card__icons {
+  opacity: 1;
+}

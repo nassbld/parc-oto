@@ -1,0 +1,63 @@
+<section class="header">
+  <div>
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle') : 'fr' }}</h3>
+  </div>
+
+  <div class="buttons">
+    <div class="radio-inputs">
+      <label class="radio">
+        <input type="radio" name="radio" checked="" (click)="setView(CalendarView.Month)">
+        <span class="name">Mois</span>
+      </label>
+
+      <label class="radio">
+        <input type="radio" name="radio" (click)="setView(CalendarView.Week)">
+        <span class="name">Semaine</span>
+      </label>
+
+      <label class="radio">
+        <input type="radio" name="radio" (click)="setView(CalendarView.Day)">
+        <span class="name">Jour</span>
+      </label>
+    </div>
+
+    <div class="chevrons">
+      <button id="previous" mwlCalendarPreviousView [(viewDate)]="viewDate" [view]="view" [excludeDays]="[0, 6]">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button id="next" mwlCalendarNextView [(viewDate)]="viewDate" [view]="view" [excludeDays]="[0, 6]">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="calendar">
+  <mwl-calendar-month-view
+    *ngIf="view === CalendarView.Month"
+    [viewDate]="viewDate"
+    [events]="events"
+    [excludeDays]="[0, 6]"
+    (dayClicked)="dayClicked($event)"
+    locale="fr">
+  </mwl-calendar-month-view>
+
+  <mwl-calendar-week-view
+    *ngIf="view === CalendarView.Week"
+    [viewDate]="viewDate"
+    [events]="events"
+    [excludeDays]="[0, 6]"
+    [dayStartHour]="7"
+    [dayEndHour]="19"
+    locale="fr">
+  </mwl-calendar-week-view>
+
+  <mwl-calendar-day-view
+    *ngIf="view === CalendarView.Day"
+    [viewDate]="viewDate"
+    [events]="events"
+    [dayStartHour]="7"
+    [dayEndHour]="19"
+    locale="fr">
+  </mwl-calendar-day-view>
+</section>

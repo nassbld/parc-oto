@@ -1,0 +1,97 @@
+.calendar {
+  padding: 0.4rem;
+  background-color: white;
+  border-radius: 0.6rem;
+  -webkit-box-shadow: 0 4px 35px rgba(0, 0, 0, .1);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.5rem 1rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+button {
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 10px;
+  color: black;
+  padding: 1em 1.8em;
+  background: transparent;
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.7em;
+  font-weight: bold;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+button:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.radio-inputs {
+  position: relative;
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio .name:hover {
+  background-color: lightgray;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}
+
+.chevrons {
+  gap: 0.25rem
+}

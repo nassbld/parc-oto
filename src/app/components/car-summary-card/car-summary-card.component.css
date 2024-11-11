@@ -1,0 +1,56 @@
+.card {
+  border-radius: 0.6rem;
+  padding: 1rem;
+}
+
+.infos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.image {
+  width: 7rem;
+  border-radius: 0.5rem;
+
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 100%;
+  }
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.main-car-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle__brand {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.vehicle__model {
+  font-size: 0.75rem;
+  color: #555555;
+}
+
+.stats {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  flex-wrap: nowrap;
+}
+
+.state-value {
+  font-weight: 700;
+  color: #C8102E;
+}

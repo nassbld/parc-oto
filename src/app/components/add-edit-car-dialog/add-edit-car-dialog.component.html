@@ -1,0 +1,63 @@
+<h2 mat-dialog-title>Ajouter ou modifier les informations d'un véhicule</h2>
+<mat-dialog-content class="mat-typography content">
+
+  <mat-form-field class="vehicle__brand" appearance="outline">
+    <mat-label>Marque du véhicule</mat-label>
+    <mat-select>
+      @for (brand of carBrands; track brand) {
+        <mat-option [value]="brand.value">{{ brand.viewValue }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="vehicle__model" appearance="outline">
+    <mat-label>Modèle du véhicule</mat-label>
+    <mat-select>
+      @for (model of carModels; track model) {
+        <mat-option [value]="model.value">{{ model.viewValue }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <div class="vehicle__upload-photo">
+    <label for="vehicle-photo-upload">
+      <i class="fa-solid fa-camera"></i>
+      <span>Ajouter une photo du véhicule</span>
+    </label>
+    <input type="file" id="vehicle-photo-upload" accept="image/*" (change)="onPhotoUpload($event)">
+  </div>
+
+  <mat-form-field class="vehicle__licence-plate" appearance="outline">
+    <mat-label>Plaque d'immatriculation</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <mat-form-field class="vehicle__grey-card-number" appearance="outline">
+    <mat-label>Numéro de carte grise</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <mat-form-field class="vehicle__insurance-expiration-date" appearance="outline">
+    <mat-label>Expiration de l'assurance</mat-label>
+    <input matInput [matDatepicker]="insurancePicker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="insurancePicker"></mat-datepicker-toggle>
+    <mat-datepicker #insurancePicker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="vehicle__control-renewal-date" appearance="outline">
+    <mat-label>Renouvellement du contrôle technique</mat-label>
+    <input matInput [matDatepicker]="controlPicker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="controlPicker"></mat-datepicker-toggle>
+    <mat-datepicker #controlPicker></mat-datepicker>
+  </mat-form-field>
+
+
+</mat-dialog-content>
+
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Annuler</button>
+  <button mat-flat-button [mat-dialog-close]="true" cdkFocusInitial>Enregistrer</button>
+</mat-dialog-actions>
