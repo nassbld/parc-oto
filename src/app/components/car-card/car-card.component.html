@@ -1,4 +1,4 @@
-<div class="card">
+<section class="card">
   <div class="image_container">
     <img src="/images/kangoo.png" alt="Car picture">
   </div>
@@ -6,12 +6,12 @@
   <div class="informations">
     <div class="top">
       <div class="line">
-        <span class="title">Renault</span>
+        <span class="title">{{ vehicleType?.brand }}</span>
         <span class="title">•</span>
-        <span class="sub_title">Kangoo</span>
+        <span class="sub_title">{{ vehicleType?.model }}</span>
       </div>
       <div class="description">
-        <span class="plate">DH-212-QG</span>
+        <span class="plate">{{ vehicle.licensePlate }}</span>
       </div>
     </div>
 
@@ -22,12 +22,12 @@
 
     <div class="line">
       <span class="information_title">Date d'expiration de l'assurance :</span>
-      <span class="description">15 août 2025</span>
+      <span class="description">{{ formattedEndInsurance }}</span>
     </div>
 
     <div class="line">
       <span class="information_title">Date de renouvellement du contrôle technique :</span>
-      <span class="description">29 mars 2025</span>
+      <span class="description">{{ formattedEndTechnicalControl }}</span>
     </div>
   </div>
 
@@ -37,9 +37,9 @@
       <span class="icon"><i class="fa-solid fa-pen" style="color: white;"></i></span>
     </button>
 
-    <button class="noselect">
+    <button class="noselect" (click)="openDeleteDialog()">
       <span class="text delete">Supprimer</span>
       <span class="icon"><i class="fa-solid fa-trash" style="color: white;"></i></span>
     </button>
   </div>
-</div>
+</section>

@@ -1,14 +1,16 @@
 <div class="card">
   <div class="card__time">
-    <p>10:00 - 12:30</p>
+    <p>{{ startHour }}</p>
+    <p> - </p>
+    <p>{{ endHour }}</p>
   </div>
   <div class="name">
     Nour-Eddine BELLAOUD
   </div>
   <div class="car">
-    <span class="vehicle__brand">Renault</span>
-    <span class="vehicle__model">Kangoo</span>
-    <span class="vehicle__licence-plate">DF-212-QG</span>
+    <span class="vehicle__brand">{{ vehicleIdentity?.brand }}</span>
+    <span class="vehicle__model">{{ vehicleIdentity?.model }}</span>
+    <span class="vehicle__licence-plate">{{ vehicleIdentity?.licensePlate }}</span>
   </div>
   <div class="card__icons" (click)="openDialog()">
     <svg class="svg-icon" height="100" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="100" x="0" xmlns="http://www.w3.org/2000/svg" y="0">

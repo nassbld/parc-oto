@@ -9,14 +9,9 @@
           <span>Réservations à venir</span>
         </section>
         <div class="cards reservations">
-          <app-incoming-reservation-card></app-incoming-reservation-card>
-          <app-incoming-reservation-card></app-incoming-reservation-card>
-          <app-incoming-reservation-card></app-incoming-reservation-card>
-          <app-incoming-reservation-card></app-incoming-reservation-card>
-          <app-incoming-reservation-card></app-incoming-reservation-card>
-          <app-incoming-reservation-card></app-incoming-reservation-card>
-          <app-incoming-reservation-card></app-incoming-reservation-card>
-          <app-incoming-reservation-card></app-incoming-reservation-card>
+          <ng-container *ngFor="let reservation of reservations">
+            <app-incoming-reservation-card [reservation]="reservation"/>
+          </ng-container>
         </div>
       </section>
       <section class="notifications">
@@ -31,11 +26,9 @@
           <span>Véhicules de l'agence</span>
         </section>
         <div class="cards cars">
-          <app-car-summary-card></app-car-summary-card>
-          <app-car-summary-card></app-car-summary-card>
-          <app-car-summary-card></app-car-summary-card>
-          <app-car-summary-card></app-car-summary-card>
-          <app-car-summary-card></app-car-summary-card>
+          <ng-container *ngFor="let vehicle of vehicles">
+            <app-car-summary-card [vehicle]="vehicle"></app-car-summary-card>
+          </ng-container>
         </div>
       </section>
     </section>

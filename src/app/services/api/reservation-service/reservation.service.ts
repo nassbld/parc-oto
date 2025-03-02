@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ReservationDTO } from '../../../dtos/dtos'; // Assurez-vous que ce chemin est correct
+import {ReservationDTO, ReservationWithInfosDTO} from '../../../dtos/dtos';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +21,18 @@ export class ReservationService {
 
   getReservationById(id: number): Observable<ReservationDTO> {
     return this.http.get<ReservationDTO>(`${this.baseUrl}/${id}`);
+  }
+
+  getReservationsByAgencyId(agencyId: number): Observable<ReservationDTO[]> {
+    return this.http.get<ReservationDTO[]>(`${this.baseUrl}/agency/${agencyId}`);
+  }
+
+  getReservationsWithInformationsByAgencyId(agencyId: number): Observable<ReservationWithInfosDTO[]> {
+    return this.http.get<ReservationWithInfosDTO[]>(`${this.baseUrl}/agency/informations/${agencyId}`);
+  }
+
+  getTodayReservationsByAgencyId(agencyId: number): Observable<ReservationDTO[]> {
+    return this.http.get<ReservationDTO[]>(`${this.baseUrl}/agency/today/${agencyId}`);
   }
 
   createReservation(reservation: ReservationDTO): Observable<void> {

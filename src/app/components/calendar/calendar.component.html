@@ -32,7 +32,20 @@
   </div>
 </section>
 
-<section class="calendar">
+<section *ngIf="eventsLoaded" class="calendar">
+
+  <ng-template #weekDayEventTemplate let-weekEvent="weekEvent">
+    <div class="cal-event-container">
+      <div class="cal-event" [ngStyle]="{'background-color': weekEvent.event?.color?.secondary, 'border-color': weekEvent.event?.color?.primary}">
+        <div class="cal-event-title">{{ weekEvent.event?.title }}</div>
+        <div class="cal-event-details">
+          <div>{{ weekEvent.event?.meta?.vehicleBrandAndModel }}</div>
+          <div>{{ weekEvent.event?.meta?.vehicleLicensePlate }}</div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
   <mwl-calendar-month-view
     *ngIf="view === CalendarView.Month"
     [viewDate]="viewDate"
@@ -49,6 +62,7 @@
     [excludeDays]="[0, 6]"
     [dayStartHour]="7"
     [dayEndHour]="19"
+    [eventTemplate]="weekDayEventTemplate"
     locale="fr">
   </mwl-calendar-week-view>
 
@@ -58,6 +72,7 @@
     [events]="events"
     [dayStartHour]="7"
     [dayEndHour]="19"
+    [eventTemplate]="weekDayEventTemplate"
     locale="fr">
   </mwl-calendar-day-view>
 </section>

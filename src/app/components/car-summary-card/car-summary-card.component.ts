@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {VehicleIdentityDTO} from '../../dtos/dtos';
 
 @Component({
   selector: 'app-car-summary-card',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './car-summary-card.component.css'
 })
 export class CarSummaryCardComponent {
-
+  @Input() vehicle!: VehicleIdentityDTO;
 }
