@@ -1,3 +1,6 @@
 <section class="main">
   <h2>Parc'oto</h2>
+  <button *ngIf="authService.isAuthenticated()" (click)="onLogout()">
+    Déconnexion
+  </button>
 </section>

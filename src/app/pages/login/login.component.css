@@ -1,0 +1,131 @@
+/* src/app/pages/login/login.component.css */
+
+/* Utilise la police définie dans styles.css et centre les éléments */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fcfcfc; /* Utilise la couleur de votre body */
+  font-family: "Funnel Sans", sans-serif; /* Applique votre police personnalisée */
+}
+
+.login-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Ombre légèrement plus douce */
+  width: 100%;
+  max-width: 400px;
+  text-align: center; /* Centre tout le contenu du conteneur */
+}
+
+h2 {
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600; /* Un peu plus gras pour le titre */
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd; /* Bordure plus légère */
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Important pour que le padding n'augmente pas la largeur */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Effet visuel quand on clique sur un champ */
+.form-group input:focus {
+  outline: none;
+  border-color: #D93B3B; /* Rouge principal pour le focus */
+  box-shadow: 0 0 0 3px rgba(217, 59, 59, 0.2); /* Ombre de focus rouge clair */
+}
+
+button {
+  width: 100%;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #D93B3B; /* Rouge principal */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem; /* Un peu d'espace au-dessus du bouton */
+}
+
+/* Effet au survol du bouton */
+button:hover:not(:disabled) {
+  background-color: #B82B2B; /* Rouge plus foncé */
+}
+
+button:disabled {
+  background-color: #F5B8B8; /* Rouge clair et désaturé pour l'état désactivé */
+  cursor: not-allowed;
+}
+
+.error-message {
+  margin-top: 1rem;
+  color: #a32731; /* Texte rouge foncé pour une meilleure lisibilité */
+  background-color: #fde8e9;
+  border: 1px solid #f9c5c9;
+  border-radius: 4px;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+label {
+  justify-self: flex-start;
+}
+
+/* Conteneur pour le champ de mot de passe et l'icône */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* L'input à l'intérieur du wrapper prend toute la largeur */
+.password-wrapper input {
+  width: 100%;
+  padding-right: 2.5rem; /* Ajoute de l'espace à droite pour l'icône */
+}
+
+/* Style de l'icône */
+.toggle-password {
+  position: absolute;
+  right: 1rem; /* Positionne l'icône à droite */
+  cursor: pointer;
+  color: #888; /* Couleur de l'icône */
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password:hover {
+  color: #333; /* Change la couleur au survol */
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-reveal,
+input[type="password"]::-webkit-clear-button {
+  display: none !important; /* !important est parfois nécessaire pour surcharger les styles du navigateur */
+}
